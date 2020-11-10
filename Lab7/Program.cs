@@ -236,6 +236,7 @@ namespace Lab6
             {
                 Console.WriteLine("Exception: " + ex.message);
                 Console.WriteLine("The place of exeption: " + ex.GetType().FullName);
+                Console.WriteLine("Diagnostics: " + ex.diagnostics);
             }
             Console.WriteLine();
 
@@ -251,6 +252,8 @@ namespace Lab6
             {
                 Console.WriteLine("Exception: " + ex.message);
                 Console.WriteLine("The place of exeption: " + ex.GetType().FullName);
+                Console.WriteLine("Diagnostics: " + ex.diagnostics);
+
             }
             Console.WriteLine();
 
@@ -265,6 +268,8 @@ namespace Lab6
             {
                 Console.WriteLine("Exception: " + ex.message);
                 Console.WriteLine("The place of exeption: " + ex.GetType().FullName);
+                Console.WriteLine("Diagnostics: " + ex.diagnostics);
+
             }
             Console.WriteLine();
 

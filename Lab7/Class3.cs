@@ -29,6 +29,7 @@ namespace Lab7
     class WrongStringFormat : Exception
     {
         public string message = "Your String Has Wrong Format! Please Try Again!";
+        public string diagnostics = "Please, don't write \"Geely\"";
         public WrongStringFormat(string message) : base(message)
         {
 
@@ -38,6 +39,7 @@ namespace Lab7
     class WrongNumberValue : Exception
     {
         public string message = "We Have Cars With 4 Wheels Only";
+        public string diagnostics = "Don't ask us for 4 wheels cars";
         public WrongNumberValue(string message) : base(message)
         {
 
@@ -47,6 +49,7 @@ namespace Lab7
 
     class NullException : ApplicationException
     {
+        public string diagnostics = "Ummm... Just Delete This Exception. It Doesn't Matter";
         public string message = "Please, Don't send empty string!";
         public NullException(string message) : base(message)
         {
