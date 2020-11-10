@@ -271,6 +271,10 @@ namespace Lab6
                 Console.WriteLine("Diagnostics: " + ex.diagnostics);
 
             }
+            finally
+            {
+                Console.WriteLine("Just a message from \"finally\"");
+            }
             Console.WriteLine();
 
 
