@@ -9,12 +9,20 @@ namespace Lab7
 {
     public class ClassForExceptions
     {
-        public string Model;
+        public string model;
+        public int wheels;
         public void IsTheStringCorrect()
         {
-            if (Model == "Geely")
+            if (model == "Geely")
             {
                 throw new WrongStringFormat("Wrong String Format!");
+            }
+        }
+        public void IsTheNumberCorrect()
+        {
+            if (wheels != 4)
+            {
+                throw new WrongNumberValue("Wrong Number Value!");
             }
         }
     }
@@ -27,23 +35,21 @@ namespace Lab7
         }
     }
 
-    class WrongAgeValue : ArgumentOutOfRangeException
+    class WrongNumberValue : Exception
     {
-        int Value { get; set; }
-        public WrongAgeValue(string message, int value) : base(message)
+        public string message = "We Have Cars With 4 Wheels Only";
+        public WrongNumberValue(string message) : base(message)
         {
-            Value = value;
 
         }
     }
 
 
-    class IsNotWeapon : ArgumentException
+    class NullException : ApplicationException
     {
-        string Value { get; set; }
-        public IsNotWeapon(string message, string value) : base(message)
+        public string message = "Please, Don't send empty string!";
+        public NullException(string message) : base(message)
         {
-            Value = value;
 
         }
     }

@@ -131,7 +131,7 @@ namespace Lab6
     {
         static void Main(string[] args)
         {
-            Car car = new Car();
+            /*Car car = new Car();
             car.FuelConsumption = 10;
             car.Speed = 250;
             Train train = new Train();
@@ -220,13 +220,13 @@ namespace Lab6
             var json = JsonConvert.SerializeObject(JS, Formatting.Indented);
             Console.WriteLine(json);
             var NewInfo = JsonConvert.DeserializeObject<JsonTester>(json);
-            Console.WriteLine(NewInfo.Str + NewInfo.Number);
+            Console.WriteLine(NewInfo.Str + NewInfo.Number);*/
 
             try
             {
                 ClassForExceptions c1 = new ClassForExceptions();
                 Console.Write("Enter String, Please. ");
-                c1.Model = Console.ReadLine();
+                c1.model = Console.ReadLine();
                 c1.IsTheStringCorrect();
             }
             catch (WrongStringFormat ex)
@@ -235,6 +235,37 @@ namespace Lab6
                 Console.WriteLine("The place of exeption: " + ex.GetType().FullName);
             }
             Console.WriteLine();
+
+            try
+            {
+                ClassForExceptions c2 = new ClassForExceptions();
+                Console.Write("Enter Number Of Wheels, Please. ");
+                c2.wheels = Convert.ToInt32(Console.ReadLine());
+                c2.IsTheNumberCorrect();
+            }
+            catch (WrongNumberValue ex)
+            {
+                Console.WriteLine("Exception: " + ex.message);
+                Console.WriteLine("The place of exeption: " + ex.GetType().FullName);
+            }
+            Console.WriteLine();
+
+            try
+            {
+                ClassForExceptions c3 = new ClassForExceptions();
+                Console.Write("Enter Number Of Wheels, Please. ");
+                c3.model = null;
+                if (c3.model == null)
+                    throw new NullException("Your String Is null!");
+            }
+            catch (NullException ex)
+            {
+                Console.WriteLine("Exception: " + ex.message);
+                Console.WriteLine("The place of exeption: " + ex.GetType().FullName);
+            }
+            Console.WriteLine();
+
+
         }
     }
 }
