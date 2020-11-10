@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Lab6;
 using Lab7;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace Lab6
 {
@@ -241,6 +242,7 @@ namespace Lab6
                 ClassForExceptions c2 = new ClassForExceptions();
                 Console.Write("Enter Number Of Wheels, Please. ");
                 c2.wheels = Convert.ToInt32(Console.ReadLine());
+                Debug.Assert(c2.wheels <= 4);
                 c2.IsTheNumberCorrect();
             }
             catch (WrongNumberValue ex)
@@ -253,7 +255,6 @@ namespace Lab6
             try
             {
                 ClassForExceptions c3 = new ClassForExceptions();
-                Console.Write("Enter Number Of Wheels, Please. ");
                 c3.model = null;
                 if (c3.model == null)
                     throw new NullException("Your String Is null!");
