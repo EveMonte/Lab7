@@ -223,6 +223,8 @@ namespace Lab6
             var NewInfo = JsonConvert.DeserializeObject<JsonTester>(json);
             Console.WriteLine(NewInfo.Str + NewInfo.Number);*/
 
+
+            //Пользовательские исключения
             try
             {
                 ClassForExceptions c1 = new ClassForExceptions();
@@ -267,6 +269,35 @@ namespace Lab6
             Console.WriteLine();
 
 
+            //Стандартные исключения
+            try
+            {
+                int num = 10;
+                int result = num / 0;
+            }
+            catch (DivideByZeroException) { Console.WriteLine("Division by zero! You can not divide by zero"); }
+            Console.WriteLine();
+
+
+            try
+            {
+                int[] num = new int[5];
+                num[6] = 4;
+            }
+            catch (IndexOutOfRangeException) { Console.WriteLine("Index out of range! Wrong index"); }
+            Console.WriteLine();
+
+
+            try
+            {
+                object obj = "you";
+                int num = (int)obj;
+            }
+            catch (InvalidCastException)
+            {
+                Console.WriteLine("Wrong type conversation!");
+            }
+            Console.WriteLine();
         }
     }
 }
