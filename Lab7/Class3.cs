@@ -4,9 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Lab6;
+using System.IO;
 
 namespace Lab7
 {
+    
+    public class ConsoleLogger
+    {
+        public void OutputInfo(string info)
+        {
+            Console.WriteLine(DateTime.Now + $", {info}: Test log message.");
+        }
+    }
+
+    public class FileLogger
+    {
+
+        public void OutputInfo(string info)
+        {
+            string path = @"C:\Users\User\Desktop\ООП\Lab7\Lab7\LogFile.txt";
+            StreamWriter sw = new StreamWriter(path, true);
+            sw.WriteLine(DateTime.Now + $", {info}: Test log message.");
+            Console.WriteLine("Log written");
+            sw.Close();
+        }
+    }
     public class ClassForExceptions
     {
         public string model;

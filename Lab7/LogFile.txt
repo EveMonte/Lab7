@@ -1,0 +1,1 @@
+10.11.2020 15:08:11, INFO: Test log message.

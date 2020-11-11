@@ -128,6 +128,8 @@ namespace Lab6
         }
     }
 
+
+
     class Program
     {
         static void Main(string[] args)
@@ -307,6 +309,9 @@ namespace Lab6
                 Console.WriteLine("Wrong type conversation!");
             }
             Console.WriteLine();
+
+            FileLogger cl = new FileLogger();
+            cl.OutputInfo("INFO");
         }
     }
 }
